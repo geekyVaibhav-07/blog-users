@@ -34,3 +34,11 @@ Schema of a post:
         profilePicture: String
         pictures: List
     }
+
+env varriables that should be set in .env file: 
+    DATABASE_HOST='mongodb+srv' URIs
+    DATABASE_USER=database username
+    DATABASE_PASSWORD=database pasword
+    DATABASE=database
+    PRODUCTION_PORT=8001
+    DEVELOPMENT_PORT=8000
