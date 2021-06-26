@@ -12,10 +12,6 @@ Routes:
     - path: /login
     - methods: 
         - post: authenticate a user
-    
-    - path: /me
-        - get: get authenticated user
-    
 
 Schema of a post: 
     {
