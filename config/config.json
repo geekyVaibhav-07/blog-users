@@ -1,0 +1,9 @@
+{
+    "services": {
+        "authService": {
+            "host": "localhost.com",
+            "protocol": "http",
+            "port": 8002
+        }
+    }
+}
