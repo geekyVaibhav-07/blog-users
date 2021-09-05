@@ -1,25 +1,19 @@
 const express = require('express');
+const userController = require('./../controller/userController');
 
 const router = express.Router();
 
+// unprotecetd routes --login not required
 router.route('/')
-    .get((req, res) => {
-        res.status(200).json({
-            message: 'landed in user get route'
-        })
-    })
-    .post((req, res) => {
-        res.status(201).json({
-            message: 'landed in user post route'
-        })
-    })
-    .put((req, res) => {
-        res.status(201).json({
-            message: 'landed in user put route'
-        })
-    })
-    .delete((req, res) => {
-        res.sendStatus(204);
-    })
+    .post(userController.createUser)
+
+// protected routes -- login required
+// router.route('/')
+//     .get(authController.isAuthenticated, userController.getUsers)
+//     .put(authController.isAuthenticated, userController.updatedUser)
+//     .delete(authController.isAuthenticated, userController.deleteUser)
+
+// router.route('/me')
+//     .get(authController.isAuthenticated, userController.getMe)
 
 module.exports = router

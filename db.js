@@ -6,8 +6,8 @@ class Database {
         this.connectionString = `mongodb+srv://${DATABASE_USER}:${DATABASE_PASSWORD}@${DATABASE_HOST}/blogUser`;
         this.options = { 
             useNewUrlParser: true,
-            useUnifiedTopology: true
-        }
+            useUnifiedTopology: true,
+            useCreateIndex: true        }
     }
 
     async initConnection() {
