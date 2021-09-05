@@ -1,8 +1,9 @@
 require('dotenv').config();
 const db = require('./db.js');
-const server = require('./server.js');
+const app = require('./app.js');
 
-const port = process.env[`${process.env.NODE_ENV}_PORT`];
+const port = process.env[`${process.env.NODE_ENV.toUpperCase()}_PORT`];
+let server;
 
 process.on('unhandledRejection', () => {
     server &&
@@ -22,7 +23,7 @@ process.on('uncaughtException', () => {
 
 const startServer = async () => {
     if (await db.initConnection()) {
-        server.listen(port, () => {
+        server = app.listen(port, () => {
             console.log(`Server has started on ${port}`);
         })
     } else {

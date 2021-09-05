@@ -1,5 +1,6 @@
 # blog-users
 Users services for project blog
+    - can create, update, delete user
 
 Routes: 
     - path: /user
@@ -8,10 +9,6 @@ Routes:
         - post: create a new user
         - put: updated user
         - delete: delete user
-
-    - path: /login
-    - methods: 
-        - post: authenticate a user
 
 Schema of a post: 
     {
@@ -24,11 +21,14 @@ Schema of a post:
         gender: String
         bio: String
         profession: String
-        location: String
+        address: String
         contactNumber: String
-        age: Int
+        dob: String
         profilePicture: String
-        pictures: List
+        pictures: Array
+        accountCreatedAt: DateTime
+        wrongPasswordAttempts: Number
+        isBlocked: DateTime
     }
 
 env varriables that should be set in .env file: 
@@ -37,4 +37,4 @@ env varriables that should be set in .env file:
     DATABASE_PASSWORD=database pasword
     DATABASE=database
     PRODUCTION_PORT=8001
-    DEVELOPMENT_PORT=8000
+    DEVELOPMENT_PORT=8001
