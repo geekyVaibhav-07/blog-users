@@ -1,5 +1,4 @@
-const errorCatcher = require('./../helper/errorCatcher');
-const AppError = require('./../helper/appError');
+const { errorCatcher, AppError } = require('@geekcorp/express-utils');
 const constants = require('../constants/constants');
 
 const isAuthenticated = async (req, res, next) => {
